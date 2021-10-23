@@ -1,0 +1,4 @@
+// Create MatchDetails Node
+:auto USING PERIODIC COMMIT 5000
+load csv with headers from "file:///match_details.csv" as rows
+create(m:match_details{match_details_id:rows.match_id,inning:rows.inning,batting_team:rows.batting_team,bowling_team:rows.bowling_team,over:rows.over,ball:rows.ball,batsman:rows.batsman,non_striker:rows.non_striker,bowler:rows.bowler,is_super_over:rows.is_super_over,wide_runs:rows.wide_runs,bye_runs:rows.bye_runs,legbye_runs:rows.legbye_runs,noball_runs:rows.noball_runs,penalty_runs:rows.penalty_runs,batsman_runs:rows.batsman_runs,extra_runs:rows.extra_runs,total_runs:rows.total_runs,player_dismissed:rows.player_dismissed,dismissal_kind:rows.dismissal_kind,fielder:rows.fielder})
